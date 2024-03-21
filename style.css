@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Fraunces:wght@100;300;400;500;700&display=swap");
+
+:root {
+  /* PRIMARY */
+  --cream: hsl(30, 38%, 92%);
+  --dark-cyan: hsl(158, 36%, 37%);
+
+  /* NEUTRAL */
+  --very-dark-blue: hsl(217, 54%, 11%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 8%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cream);
+  font-size: 1.4rem;
+  font-family: "Montserrat", "Fraunces", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 7.5rem 2.5rem;
+}
+
+.card {
+  max-width: 60rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card > * {
+  flex: 50%;
+}
+
+.img-container .img-desktop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-container .img-mobile {
+  display: none;
+}
+
+.content {
+  background-color: var(--white);
+  padding: 3.2rem;
+  color: hsl(228, 12%, 62%);
+}
+
+.product-category {
+  font-size: 1.25rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 4.5px;
+}
+.product-name {
+  font-size: 3.2rem;
+  line-height: 1;
+  color: var(--black);
+  margin-bottom: 2.5rem;
+  font-family: "Fraunces";
+  font-weight: 600;
+}
+
+.product-description {
+  font-size: 1.4rem;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+.product-price {
+  font-size: 3.1rem;
+  font-weight: 600;
+  font-family: "Fraunces";
+  display: flex;
+  align-items: center;
+  color: var(--dark-cyan);
+}
+
+.product-price span {
+  margin-left: 1.75rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: hsl(228, 12%, 50%);
+  text-decoration: line-through;
+}
+
+.btn-add {
+  margin-top: 2.75rem;
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-add:hover {
+  background-color: hsl(158, 36%, 25%);
+}
+
+@media (max-width: 42.5em) {
+  .card {
+    flex-direction: column;
+  }
+
+  .img-container .img-desktop {
+    display: none;
+  }
+
+  .img-container .img-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .btn-add {
+    margin-top: 2.25rem;
+  }
+}
+
+@media (max-width: 25em) {
+  body {
+    padding: 5rem 1.5rem;
+  }
+  .content {
+    padding: 2.5rem;
+  }
+
+  .btn-add {
+    margin-top: 2rem;
+  }
+}
